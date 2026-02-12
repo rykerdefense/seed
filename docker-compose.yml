@@ -28,5 +28,11 @@ services:
       DB_PASS: rykerwikijs
       DB_NAME: rykerwiki
 
+    develop:
+      watch:
+        - action: sync
+          path: ./content
+          target: /wiki/content
+
 volumes:
   db-data:
