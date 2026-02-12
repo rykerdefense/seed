@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:15
+    container_name: ryker-wiki-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: rykerwiki
+      POSTGRES_USER: rykerwikijs
+      POSTGRES_PASSWORD: rykerwikijs
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  wiki:
+    image: ghcr.io/requarks/wiki:2
+    container_name: rykerwikijs
+    depends_on:
+      - db
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      DB_TYPE: postgres
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: rykerwikijs
+      DB_PASS: rykerwikijs
+      DB_NAME: rykerwiki
+
+volumes:
+  db-data:
