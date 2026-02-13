@@ -29,6 +29,12 @@ help:
 	@echo "\n"
 
 
+	@echo "SPECIAL COMMANDS"
+	@echo "  purge*   	Destroy and delete all containers, images, and volumes"
+
+	@echo "\n"
+
+
 # Container commands
 build:
 	$(MAKE) hosts
@@ -97,3 +103,12 @@ wiki-stop:
 
 wiki-restart:
 	docker compose restart wiki
+
+
+# Special commands
+
+purge:
+	docker compose stop
+	docker compose down
+	./scripts/remove-images.sh
+	./scripts/remove-volumes.sh
