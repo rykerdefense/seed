@@ -8,6 +8,7 @@ help:
 	@echo "  rebuild Purge cache and rebuild"
 	@echo "  run     Start the container (alias of up)"
 	@echo "  shell   Connect to the wiki container via command-line"
+	@echo "  status  Display status of containers, images, and volumes"
 	@echo "  watch   Monitor file changes in realtime"
 
 
@@ -42,5 +43,9 @@ run:
 shell:
 	docker compose exec wiki zsh
 
+status:
+	docker ps
+	docker image list
+	docker volume ls
 watch:
 	docker compose up --watch
