@@ -36,7 +36,7 @@ make <subcommand>
 ```
 and press \<Enter\>.
 
-![make command example](./docs/assets/images/make-command.png)
+<img src="./docs/assets/images/make-command.png" height="50%" />
 
 ### TO-DO:
 - lots
