@@ -2,13 +2,13 @@ help:
 	@echo "Container commands:"
 	@echo "  COMMAND   	DESCRIPTION"
 	@echo "  build   	Build containers"
-	@echo "  up      	Start containers"
-	@echo "  down    	Stop containers"
 	@echo "  logs    	Tail logs in realtime"
 	@echo "  open    	Open in the browser"
 	@echo "  rebuild 	Purge cache and rebuild"
 	@echo "  run     	Start the container (alias of up)"
 	@echo "  shell   	Connect to the wiki container via command-line"
+	@echo "  start    	Start all containers"
+	@echo "  stop    	Stop all containers"
 	@echo "  status  	Display status of containers, images, and volumes"
 	@echo "  watch   	Monitor file changes in realtime"
 
@@ -35,12 +35,6 @@ build:
 	docker compose build
 	docker compose up -d
 
-up:
-	docker compose up -d
-
-down:
-	docker compose down
-
 hosts:
 	./scripts/config-hostsfile.sh
 
@@ -56,10 +50,16 @@ rebuild:
 	docker compose up -d
 
 run:
-	$(MAKE) up
+	$(MAKE) start
 
 shell:
 	docker compose exec wiki zsh
+
+start:
+	docker compose up -d
+
+stop:
+	docker compose down
 
 status:
 	docker ps
