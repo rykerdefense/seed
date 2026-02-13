@@ -22,7 +22,8 @@ RUN apk add --no-cache \
     jq \
     less \
     nano \
-    ca-certificates
+    ca-certificates \
+    xclip
 
 # make zsh default shell for node user
 RUN chsh -s /bin/zsh node || true
