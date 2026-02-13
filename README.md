@@ -4,6 +4,23 @@
 
 ## Installation (macos/linux)
 
+### Dependencies/pre-requisites
+
+This project leverages Docker, a platform-agnostic, virtualization technology known as "containerization", with ≈95% compatibility on modern systems (MacOS, Linux, Windows, Android) across a spectrum of CPU architectures (multiple CPU architectures (x86-64, ARM64, ARMv7, s390x, etc.)
+
+To install on MacOS:
+- copy the following code using the button at the top-right of the box
+- open up the Terminal app (/Applications/Utilities/Terminal.app)
+- paste the code into the window and press \<Enter\>.
+
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install --cask docker-desktop
+open -a Docker.app
+```
+*Note: it may prompt you once or twice for your administrator password, both within the terminal window and when running the Desktop application for the first time. The process will likely take 5-10 minutes.*
+
 1. Open Terminal application and navigate to desired folder for installation location.
 2. Clone repository (ssh preferred)
 3. Change into base project directory
@@ -16,6 +33,7 @@
 ***Copy the following code using the button to the top right of this box, paste it into the Terminal app and press \<Enter\>.***
 
 ```bash
+open
 mkdir -p ~/Documents/projects
 cd ~/Documents/projects
 git clone git@github.com:rykerdefense/seed.git
