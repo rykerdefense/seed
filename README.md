@@ -6,16 +6,21 @@
 
 1. Open Terminal application and navigate to desired folder for installation location.
 2. Clone repository (ssh preferred)
-3. Change into base project directory and type `make build`
+3. Change into base project directory
+4. Copy the example credentials file into its working form within the base directory
+5. type `make build`
 
 
 **From terminal:**
+
+***Copy the following code using the button to the top right of this box, paste it into the Terminal app and press \<Enter\>.***
 
 ```bash
 mkdir -p ~/Documents/projects
 cd ~/Documents/projects
 git clone git@github.com:rykerdefense/seed.git
 cd seed
+cp config/env.dev.example .env
 make build
 ```
 *Note: for the initial installation, you will be prompted to enter the administrator password to modify the hosts/network configuration. This is only required once and will never be necessary again in the future.*
