@@ -1,3 +1,5 @@
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/rykerdefense/seed/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/rykerdefense/seed/tree/main)
+
 # **SEED (Self-contained Emergency Education Database)**
 ### *Ryker Defense*
 
